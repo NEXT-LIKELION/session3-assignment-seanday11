@@ -1,0 +1,210 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* 네비게이션 바 스타일 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 32px;
+    margin-right: 10px;
+}
+
+.menu-button,
+.upload-button,
+.notifications-button,
+.profile-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+.search-form {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.search-input {
+    padding: 8px 12px;
+    border: none;
+    outline: none;
+}
+
+.search-button {
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+}
+
+/* 카테고리 필터 */
+.category-filter {
+    display: flex;
+    gap: 10px;
+    padding: 10px 20px;
+    background: #fff;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.category-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: #e5e5e5;
+    cursor: pointer;
+}
+
+.category-button:hover {
+    background-color: #d1d1d1;
+}
+
+/* 비디오 카드 그리드 */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.video-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.video-card img {
+    width: 100%;
+    display: block;
+}
+
+.video-info {
+    padding: 10px;
+}
+
+.video-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.video-channel,
+.video-meta {
+    font-size: 14px;
+    color: gray;
+}
+
+/* 반응형 미디어 쿼리 */
+@media (min-width: 1536px) {
+    .container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 1535px) and (min-width: 1280px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1279px) and (min-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* 기본 검색창 스타일 */
+.search-form {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 25px;
+    padding: 5px 10px;
+    width: 100%;
+    max-width: 1000px; /* 기본값 (1536px 이상) */
+    transition: all 0.3s ease-in-out;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    background: none;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    min-width: 0;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.search-button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* 화면 크기에 따른 검색창 크기 조정 */
+@media screen and (max-width: 1536px) {
+    .search-form {
+        max-width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .search-form {
+        max-width: 720px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .search-form {
+        max-width: 560px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .search-form {
+        max-width: 250px; /* 작은 화면에서는 검색창이 더 작아짐 */
+    }
+    .search-input {
+        font-size: 14px;
+    }
+}
